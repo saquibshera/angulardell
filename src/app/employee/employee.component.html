@@ -1,0 +1,12 @@
+<p>employee works!</p>
+
+<form [formGroup]="ourform" (ngSubmit)="submitform()">
+        Name   
+        <input type="text" formControlName="name">
+        <span class="text-danger" *ngIf="this.ourform.controls.name.invalid && this.ourform.controls.name.touched">Enter name</span>
+        Address  
+        <input type="text" formControlName="address">
+
+        <button type="submit" [disabled]="this.ourform.invalid">submit</button>
+
+</form>

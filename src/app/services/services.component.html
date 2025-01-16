@@ -1,0 +1,54 @@
+<p>services works!</p>
+<form [formGroup]="ourform" (ngSubmit)="submitform()" style="padding: 10px;">
+    <div class="mb-3 row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-10">
+      <input type="text" formControlName="name"  class="form-control-plaintext" >
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Address</label>
+    <div class="col-sm-10">
+      <input type="text" formControlName="address" class="form-control" >
+    </div>
+  </div>
+  <div class="mb-3 row">
+    
+    <div class="col-sm-10">
+      <button type="submit"  class="btn btn-outline-primary">{{iseditmode?"Update Employee":"Add Employee"}}</button>
+    </div>
+  </div>
+
+</form>
+
+
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Address
+        </th>
+    </tr>
+<tr *ngFor="let x of datanew">
+
+    <td>
+        {{x.name}}
+    </td>
+    <td>
+        {{x.address}}
+    </td>
+    <td>
+        <button type="button" class="btn btn-warning" (click)="editemployee(x)">Edit</button>
+    </td>
+    <td>
+        <button type="button" class="btn btn-danger" (click)="deleteemployee(x.id)">Delete</button>
+    </td>
+</tr>
+</table>
+
+
